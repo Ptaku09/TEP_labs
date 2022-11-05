@@ -1,0 +1,8 @@
+# ninja log v5
+2	300	1666008581166802994	CMakeFiles/Lista1.dir/main.cpp.o	eda5e81af1654105
+197	227	1666008628656864786	Lista1	5efd821fc5a86997
+4	330	1666008581197479301	CMakeFiles/Lista1.dir/src/CTable.cpp.o	492e39ecfeb49af7
+2	301	1666008581168239958	CMakeFiles/Lista1.dir/src/Exercise1.cpp.o	7265cf6424f2b78a
+3	297	1666008581161025057	CMakeFiles/Lista1.dir/src/Exercise2.cpp.o	aba440d5796d179c
+3	31	1666008580897282775	CMakeFiles/Lista1.dir/src/Helpers.cpp.o	6a3a716608b3b9e3
+1	197	1666008628625808280	CMakeFiles/Lista1.dir/src/Exercise3.cpp.o	5235f9624a379cb7
