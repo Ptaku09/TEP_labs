@@ -26,13 +26,16 @@ public:
 
     CTable *pcClone();
 
-    void operator=(const CTable &pcOther);
 
     void vSetValueAt(int iOffset, int iNewVal);
 
     void vPrint();
 
+//    void operator=(const CTable &pcOther);
+
     CTable operator+(const CTable &pcOther);
+
+    CTable &operator=(const CTable &pcOther);
 
 private:
     std::string s_name;

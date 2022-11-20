@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <algorithm>
 #include "CTable.h"
 #include "Helpers.h"
 
@@ -84,9 +85,25 @@ void CTable::vPrint() {
     std::cout << std::endl;
 }
 
-void CTable::operator=(const CTable &pcOther) {
-    i_table = pcOther.i_table;
-    i_table_len = pcOther.i_table_len;
+//void CTable::operator=(const CTable &pcOther) {
+//    i_table = pcOther.i_table;
+//    i_table_len = pcOther.i_table_len;
+//}
+
+CTable &CTable::operator=(const CTable &pcOther) {
+    if (this == &pcOther) {
+        return *this;
+    }
+
+    if (i_table_len != pcOther.i_table_len) {
+        delete[] i_table;
+        i_table_len = pcOther.i_table_len;
+        i_table = new int[pcOther.i_table_len];
+    }
+
+    std::copy(pcOther.i_table, pcOther.i_table + pcOther.i_table_len, i_table);
+
+    return *this;
 }
 
 CTable CTable::operator+(const CTable &pcOther) {
@@ -102,4 +119,3 @@ CTable CTable::operator+(const CTable &pcOther) {
 
     return c_new_table;
 }
-

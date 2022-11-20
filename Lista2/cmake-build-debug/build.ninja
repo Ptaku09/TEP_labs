@@ -64,6 +64,12 @@ build CMakeFiles/Lista2.dir/src/Helpers.cpp.o: CXX_COMPILER__Lista2_Debug /Users
   OBJECT_DIR = CMakeFiles/Lista2.dir
   OBJECT_FILE_DIR = CMakeFiles/Lista2.dir/src
 
+build CMakeFiles/Lista2.dir/src/CMatrix.cpp.o: CXX_COMPILER__Lista2_Debug /Users/mateusz/Desktop/Studia/Semestr$ III/[L]$ Techniki$ efektywnego$ programowania/Lista2/src/CMatrix.cpp || cmake_object_order_depends_target_Lista2
+  DEP_FILE = CMakeFiles/Lista2.dir/src/CMatrix.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/Lista2.dir
+  OBJECT_FILE_DIR = CMakeFiles/Lista2.dir/src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Lista2
@@ -72,7 +78,7 @@ build CMakeFiles/Lista2.dir/src/Helpers.cpp.o: CXX_COMPILER__Lista2_Debug /Users
 #############################################
 # Link the executable Lista2
 
-build Lista2: CXX_EXECUTABLE_LINKER__Lista2_Debug CMakeFiles/Lista2.dir/main.cpp.o CMakeFiles/Lista2.dir/src/CTable.cpp.o CMakeFiles/Lista2.dir/src/Helpers.cpp.o
+build Lista2: CXX_EXECUTABLE_LINKER__Lista2_Debug CMakeFiles/Lista2.dir/main.cpp.o CMakeFiles/Lista2.dir/src/CTable.cpp.o CMakeFiles/Lista2.dir/src/Helpers.cpp.o CMakeFiles/Lista2.dir/src/CMatrix.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/Lista2.dir
   POST_BUILD = :
