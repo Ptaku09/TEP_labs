@@ -41,3 +41,20 @@ void CTreeStatic::vCopySubtree(CNodeStatic *pcDestination, CNodeStatic *pcSource
         vCopySubtree(pcDestination->pcGetChild(pcDestination->iGetChildrenNumber() - 1), pcSource->pcGetChild(i));
     }
 }
+
+CNodeStatic *CTreeStatic::pcFindNode(int iVal) {
+    return pcFindNodeHelper(pcGetRoot(), iVal);
+}
+
+CNodeStatic *CTreeStatic::pcFindNodeHelper(CNodeStatic *node, int iVal) {
+    if (node->iGetValue() == iVal) return node;
+
+    for (int i = 0; i < node->iGetChildrenNumber(); i++) {
+        if (node->pcGetChild(i)->iGetValue() == iVal) {
+            return node->pcGetChild(i);
+        } else {
+            pcFindNodeHelper(node->pcGetChild(i), iVal);
+        }
+    }
+}
+

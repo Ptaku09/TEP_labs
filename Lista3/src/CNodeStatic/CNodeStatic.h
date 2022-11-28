@@ -34,11 +34,15 @@ public:
 
     void vPrintUp();
 
+    void vPrintUp(CNodeStatic *pcNode);
+
+    void vPrintAllBelow(CNodeStatic *pcNode);
 
 private:
     std::vector<CNodeStatic> v_children;
     CNodeStatic *pc_parent_node;
     int i_val;
+
 };
 
 

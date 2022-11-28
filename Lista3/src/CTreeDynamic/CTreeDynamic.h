@@ -19,6 +19,10 @@ public:
 
     bool bMoveSubtree(CNodeDynamic *pcParentNode, CNodeDynamic *pcNewChildNode);
 
+    CNodeDynamic *pcFindNode(int iVal);
+
+    CNodeDynamic *pcFindNodeHelper(CNodeDynamic *node, int iVal);
+
 private:
     CNodeDynamic *pc_root;
 };

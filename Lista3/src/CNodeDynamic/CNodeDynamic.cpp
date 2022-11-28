@@ -20,6 +20,10 @@ void CNodeDynamic::vSetValue(int iNewVal) {
     i_val = iNewVal;
 }
 
+int CNodeDynamic::iGetValue() const {
+    return i_val;
+}
+
 int CNodeDynamic::iGetChildrenNumber() {
     return v_children.size();
 }
@@ -66,5 +70,29 @@ void CNodeDynamic::vPrintAllBelow() {
 
     for (int i = 0; i < v_children.size(); i++) {
         v_children[i]->vPrintAllBelow();
+    }
+}
+
+void CNodeDynamic::vPrintUp() {
+    vPrint();
+
+    if (pc_parent_node != NULL) {
+        pc_parent_node->vPrintUp();
+    }
+}
+
+void CNodeDynamic::vPrintUp(CNodeDynamic *pcNode) {
+    pcNode->vPrint();
+
+    if (pcNode->pc_parent_node != NULL) {
+        vPrintUp(pcNode->pc_parent_node);
+    }
+}
+
+void CNodeDynamic::vPrintAllBelow(CNodeDynamic *pcNode) {
+    pcNode->vPrint();
+
+    for (int i = 0; i < pcNode->v_children.size(); i++) {
+        vPrintAllBelow(pcNode->pcGetChild(i));
     }
 }

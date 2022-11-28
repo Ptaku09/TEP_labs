@@ -18,6 +18,8 @@ public:
 
     int iGetChildrenNumber();
 
+    int iGetValue() const;
+
     void vAddNewChild();
 
     void vAddNewChild(CNodeDynamic *pcNewChild);
@@ -31,6 +33,12 @@ public:
     void vPrint();
 
     void vPrintAllBelow();
+
+    void vPrintUp();
+
+    void vPrintUp(CNodeDynamic *pcNode);
+
+    void vPrintAllBelow(CNodeDynamic *pcNode);
 
 private:
     std::vector<CNodeDynamic *> v_children;

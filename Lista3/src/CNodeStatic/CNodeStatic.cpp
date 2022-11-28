@@ -71,3 +71,19 @@ void CNodeStatic::vPrintUp() {
         pc_parent_node->vPrintUp();
     }
 }
+
+void CNodeStatic::vPrintUp(CNodeStatic *pcNode) {
+    pcNode->vPrint();
+
+    if (pcNode->pc_parent_node != NULL) {
+        vPrintUp(pcNode->pc_parent_node);
+    }
+}
+
+void CNodeStatic::vPrintAllBelow(CNodeStatic *pcNode) {
+    pcNode->vPrint();
+
+    for (int i = 0; i < pcNode->iGetChildrenNumber(); i++) {
+        vPrintAllBelow(pcNode->pcGetChild(i));
+    }
+}

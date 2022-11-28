@@ -1,0 +1,70 @@
+// Statyczne
+void CNodeStatic::vPrintUp(CNodeStatic *pcNode) {
+    pcNode->vPrint();
+
+    if (pcNode->pc_parent_node != NULL) {
+        vPrintUp(pcNode->pc_parent_node);
+    }
+}
+
+void CNodeStatic::vPrintAllBelow(CNodeStatic *pcNode) {
+    pcNode->vPrint();
+
+    for (int i = 0; i < pcNode->iGetChildrenNumber(); i++) {
+        vPrintAllBelow(pcNode->pcGetChild(i));
+    }
+}
+
+
+// Dynamiczne
+void CNodeDynamic::vPrintUp(CNodeDynamic *pcNode) {
+    pcNode->vPrint();
+
+    if (pcNode->pc_parent_node != NULL) {
+        vPrintUp(pcNode->pc_parent_node);
+    }
+}
+
+void CNodeDynamic::vPrintAllBelow(CNodeDynamic *pcNode) {
+    pcNode->vPrint();
+
+    for (int i = 0; i < pcNode->v_children.size(); i++) {
+        vPrintAllBelow(pcNode->pcGetChild(i));
+    }
+}
+
+
+// Pomocniczo
+// Statycznie
+CNodeStatic *CTreeStatic::pcFindNode(int iVal) {
+    return pcFindNodeHelper(pcGetRoot(), iVal);
+}
+
+CNodeStatic *CTreeStatic::pcFindNodeHelper(CNodeStatic *node, int iVal) {
+    if (node->iGetValue() == iVal) return node;
+
+    for (int i = 0; i < node->iGetChildrenNumber(); i++) {
+        if (node->pcGetChild(i)->iGetValue() == iVal) {
+            return node->pcGetChild(i);
+        } else {
+            pcFindNodeHelper(node->pcGetChild(i), iVal);
+        }
+    }
+}
+
+// Dynamicznie
+CNodeDynamic *CTreeDynamic::pcFindNode(int iVal) {
+    return pcFindNodeHelper(pcGetRoot(), iVal);
+}
+
+CNodeDynamic *CTreeDynamic::pcFindNodeHelper(CNodeDynamic *node, int iVal) {
+    if (node->iGetValue() == iVal) return node;
+
+    for (int i = 0; i < node->iGetChildrenNumber(); i++) {
+        if (node->pcGetChild(i)->iGetValue() == iVal) {
+            return node->pcGetChild(i);
+        } else {
+            pcFindNodeHelper(node->pcGetChild(i), iVal);
+        }
+    }
+}

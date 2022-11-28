@@ -21,6 +21,10 @@ public:
 
     void vCopySubtree(CNodeStatic *pcDestination, CNodeStatic *pcSource);
 
+    CNodeStatic *pcFindNode(int iVal);
+
+    CNodeStatic *pcFindNodeHelper(CNodeStatic *node, int iVal);
+
 private:
     CNodeStatic c_root;
 };

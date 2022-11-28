@@ -33,3 +33,21 @@ bool CTreeDynamic::bMoveSubtree(CNodeDynamic *pcParentNode, CNodeDynamic *pcNewC
 
     return true;
 }
+
+CNodeDynamic *CTreeDynamic::pcFindNode(int iVal) {
+    return pcFindNodeHelper(pcGetRoot(), iVal);
+}
+
+CNodeDynamic *CTreeDynamic::pcFindNodeHelper(CNodeDynamic *node, int iVal) {
+    if (node->iGetValue() == iVal) return node;
+
+    for (int i = 0; i < node->iGetChildrenNumber(); i++) {
+        if (node->pcGetChild(i)->iGetValue() == iVal) {
+            return node->pcGetChild(i);
+        } else {
+            pcFindNodeHelper(node->pcGetChild(i), iVal);
+        }
+    }
+}
+
+
