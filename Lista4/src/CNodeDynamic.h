@@ -47,7 +47,7 @@ private:
 
 template<typename T>
 CNodeDynamic<T>::CNodeDynamic() {
-    i_val = 0;
+    i_val;
     pc_parent_node = NULL;
 }
 

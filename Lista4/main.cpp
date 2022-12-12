@@ -23,6 +23,28 @@ void v_test_int() {
     c_tree.vPrintTree();
 }
 
+void v_test_string() {
+    CTreeDynamic<std::string> c_tree;
+
+    c_tree.pcGetRoot()->vSetValue("fifty");
+    c_tree.pcGetRoot()->vAddNewChild();
+    c_tree.pcGetRoot()->vAddNewChild();
+
+    c_tree.pcGetRoot()->pcGetChild(0)->vSetValue("fifty-four");
+    c_tree.pcGetRoot()->pcGetChild(1)->vSetValue("fifty-five");
+
+    c_tree.pcGetRoot()->pcGetChild(0)->vAddNewChild();
+    c_tree.pcGetRoot()->pcGetChild(0)->vAddNewChild();
+
+    c_tree.pcGetRoot()->pcGetChild(0)->pcGetChild(0)->vSetValue("fifty-six");
+    c_tree.pcGetRoot()->pcGetChild(0)->pcGetChild(1)->vSetValue("fifty-seven");
+
+    c_tree.pcGetRoot()->pcGetChild(0)->pcGetChild(0)->vAddNewChild();
+    c_tree.pcGetRoot()->pcGetChild(0)->pcGetChild(0)->pcGetChild(0)->vSetValue("fifty-eight");
+
+    c_tree.vPrintTree();
+}
+
 void v_test_char() {
     CTreeDynamic<char> c_tree1;
     CTreeDynamic<char> c_tree2;
@@ -72,6 +94,8 @@ int main() {
     v_test_int();
     std::cout << std::endl;
     v_test_char();
+    std::cout << std::endl;
+    v_test_string();
 
     return 0;
 }
