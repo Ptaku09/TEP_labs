@@ -96,6 +96,7 @@ int main() {
     v_test_char();
     std::cout << std::endl;
     v_test_string();
+    std::cout << std::endl;
 
     return 0;
 }

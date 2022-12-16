@@ -1,3 +1,0 @@
-/Users/mateusz/Desktop/Studia/Semestr III/[L] Techniki efektywnego programowania/Lista3/cmake-build-debug/CMakeFiles/Lista3.dir
-/Users/mateusz/Desktop/Studia/Semestr III/[L] Techniki efektywnego programowania/Lista3/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/mateusz/Desktop/Studia/Semestr III/[L] Techniki efektywnego programowania/Lista3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
