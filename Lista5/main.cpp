@@ -58,11 +58,10 @@ void v_ex5_test_wo_move() {
 //}
 
 int main() {
-//    v_ex1_2_test();
+    v_ex1_2_test();
 //    v_ex4_test();
-//    v_ex5_test2();
-    v_ex5_test();
-    std::cout << std::endl;
-    v_ex5_test_wo_move();
+//    v_ex5_test();
+//    std::cout << std::endl;
+//    v_ex5_test_wo_move();
     return 0;
 }

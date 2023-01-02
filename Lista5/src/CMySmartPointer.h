@@ -77,7 +77,10 @@ CMySmartPointer<T>::~CMySmartPointer() {
 template<typename T>
 CMySmartPointer<T> &CMySmartPointer<T>::operator=(const CMySmartPointer<T> &pcOther) {
     if (this != &pcOther) {
-        if (pc_counter->iDec() == 0) {
+        pc_counter->iDec();
+        std::cout << "coutnter: " << pc_counter->iGet() << std::endl;
+
+        if (pc_counter->iGet() == 0) {
             delete pc_pointer;
             delete pc_counter;
         }
@@ -85,6 +88,8 @@ CMySmartPointer<T> &CMySmartPointer<T>::operator=(const CMySmartPointer<T> &pcOt
         pc_counter = pcOther.pc_counter;
         pc_pointer = pcOther.pc_pointer;
         pc_counter->iAdd();
+
+        std::cout << "coutnter: " << pc_counter->iGet() << std::endl;
     }
 
     return *this;

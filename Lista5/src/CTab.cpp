@@ -25,20 +25,15 @@ CTab::CTab(CTab &&cOther) {
 }
 
 CTab CTab::operator=(const CTab &cOther) {
-    if (pi_tab != NULL) delete pi_tab;
     v_copy(cOther);
     std::cout << "op= ";
     return (*this);
 }
 
 CTab CTab::operator=(CTab &&cOther) noexcept {
-    if (&cOther == this) return *this;
-
-    if (pi_tab != NULL) delete pi_tab;
-
     pi_tab = cOther.pi_tab;
     i_size = cOther.i_size;
-    cOther.pi_tab = NULL;
+    cOther.pi_tab = nullptr;
     cOther.i_size = 0;
 
     std::cout << "op=MOVE " << std::endl;

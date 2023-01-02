@@ -84,18 +84,7 @@ void CTable::vPrint() {
     std::cout << std::endl;
 }
 
-//void CTable::operator=(const CTable &pcOther) {
-//    i_table = pcOther.i_table;
-//    i_table_len = pcOther.i_table_len;
-//}
-
 CTable CTable::operator=(const CTable &pcOther) {
-    if (this == &pcOther) {
-        return *this;
-    }
-
-    if (i_table != NULL) delete i_table;
-
     s_name = pcOther.s_name + "_copy";
     i_table_len = pcOther.i_table_len;
     i_table = new int[i_table_len];
@@ -110,17 +99,11 @@ CTable CTable::operator=(const CTable &pcOther) {
 }
 
 CTable CTable::operator=(CTable &&pcOther) noexcept {
-    if (this == &pcOther) {
-        return *this;
-    }
-
-    if (i_table != NULL) delete i_table;
-
     s_name = pcOther.s_name;
     i_table_len = pcOther.i_table_len;
     i_table = pcOther.i_table;
 
-    pcOther.i_table = NULL;
+    pcOther.i_table = nullptr;
     pcOther.i_table_len = 0;
     pcOther.s_name = "";
 
